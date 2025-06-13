@@ -1,11 +1,9 @@
-// Description: Middleware to check JWT authentication using Auth0
-//src/middleware/checkAuth.ts
 import { expressjwt as jwt } from 'express-jwt';
 import jwksRsa from 'jwks-rsa';
 import { RequestHandler } from 'express';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Make sure this is called before using process.env
+dotenv.config();
 
 const checkJwt: RequestHandler = jwt({
   secret: jwksRsa.expressJwtSecret({
